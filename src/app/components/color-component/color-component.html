@@ -5,4 +5,4 @@
   placeholder="Enter a color"
   class="border mb-4 px-2 border-slate-500"
 />
-<app-child-component [color]="color()" />
+<app-child-component [name]="name()" [color]="color()" (outputEmitter)="setNewName()" />
