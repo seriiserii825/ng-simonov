@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, model } from '@angular/core';
 
 @Component({
   selector: 'app-child-component',
@@ -7,11 +7,9 @@ import { Component, input, output } from '@angular/core';
 })
 export class ChildComponent {
   color = input.required<string>();
-  name = input.required<string>();
-
-  outputEmitter = output();
+  name = model.required<string>();
 
   changeName() {
-    this.outputEmitter.emit();
+    this.name.set('new name from child');
   }
 }
