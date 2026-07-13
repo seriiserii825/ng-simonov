@@ -1,10 +1,17 @@
 import { Component, signal } from '@angular/core';
+import { ChildComponent } from '../child-component/child-component';
 
 @Component({
   selector: 'app-color-component',
-  imports: [],
+  imports: [ChildComponent],
   templateUrl: './color-component.html',
 })
 export class ColorComponent {
   color = signal<string>('red');
+
+  changeColor(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const newColor = target.value;
+    this.color.set(newColor);
+  }
 }

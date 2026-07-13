@@ -1,1 +1,8 @@
-<p>color-component works!</p>
+<input
+  (input)="changeColor($event)"
+  type="text"
+  name="change-color"
+  placeholder="Enter a color"
+  class="border mb-4 px-2 border-slate-500"
+/>
+<app-child-component [color]="color()" />
