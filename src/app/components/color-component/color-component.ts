@@ -16,7 +16,9 @@ export class ColorComponent {
     this.color.set(newColor);
   }
 
-  setNewName() {
-    this.name.set('new name from parent');
+  changeName(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const newName = target.value;
+    this.name.set(newName);
   }
 }
