@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
+bun.lock
+package-lock.json
 
 # Node
 /node_modules
