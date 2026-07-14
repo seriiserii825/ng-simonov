@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BtnShared } from '../../shared/btn-shared/btn-shared';
 
 @Component({
   selector: 'app-calculator-page',
-  imports: [FormsModule],
+  imports: [FormsModule, BtnShared],
   templateUrl: './calculator-page.html',
 })
 export class CalculatorPage {
