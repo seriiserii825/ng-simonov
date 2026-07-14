@@ -1,3 +1,33 @@
 <div class="m-w-[600px] m-auto">
-  <h2>Calculator</h2>
+  <h2 class="title">Calculator</h2>
+  <div class="flex items-center gap-4 mb-8">
+    <input
+      [(ngModel)]="firstNumber"
+      class="border border-gray-300 rounded px-2 py-1"
+      type="number"
+      name="first"
+      id="first"
+    />
+    <select
+      class="border border-gray-300 rounded px-2 py-1 bg-slate-700 text-white"
+      name="operation"
+      id="operation"
+      [(ngModel)]="operation"
+    >
+      @for (op of operations; track $index) {
+        <option [value]="op">{{ op }}</option>
+      }
+    </select>
+    <input
+      [(ngModel)]="secondNumber"
+      class="border border-gray-300 rounded px-2 py-1"
+      type="number"
+      name="second"
+      id="second"
+    />
+    <button class="btn" (click)="calculate()">Calculate</button>
+  </div>
+  @if (result !== null) {
+    <div class="result">Result: {{ result }}</div>
+  }
 </div>
