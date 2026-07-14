@@ -1,0 +1,20 @@
+<header class="bg-slate-800 text-white py-4">
+  <div class="container">
+    <div class="flex items-center justify-between">
+      <span class="text-2xl font-bold">My App</span>
+      <ul class="flex space-x-4 ml-auto">
+        @for (item of menu_items; track $index) {
+          <li>
+            <a
+              [routerLink]="item.path"
+              routerLinkActive="text-yellow-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="text-white hover:text-yellow-400 transition"
+              >{{ item.label }}</a
+            >
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</header>
