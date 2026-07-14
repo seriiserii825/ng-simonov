@@ -37,4 +37,10 @@ export class CalculatorPage {
         break;
     }
   }
+  reset() {
+    this.firstNumber = 1;
+    this.secondNumber = 1;
+    this.operation = '+';
+    this.result = 1;
+  }
 }

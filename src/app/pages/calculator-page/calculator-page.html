@@ -27,7 +27,10 @@
     />
     <button class="btn" (click)="calculate()">Calculate</button>
   </div>
-  @if (result !== null) {
-    <div class="result">Result: {{ result }}</div>
-  }
+  <footer class="flex items-center gap-12 mb-8">
+    @if (result !== null) {
+      <div class="result">Result: {{ result }}</div>
+    }
+    <button class="btn btn--danger" (click)="reset()">Reset</button>
+  </footer>
 </div>
