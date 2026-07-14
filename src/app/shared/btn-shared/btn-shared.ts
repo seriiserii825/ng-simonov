@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { IBtnClass } from './interfaces/IBtnClass';
 
 @Component({
   selector: 'app-btn-shared',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './btn-shared.html',
 })
 export class BtnShared {
-  label: string = 'Button';
-  className: 'btn--danger' | null = null;
+  label = input.required<string>();
+  className = input<IBtnClass>();
 }

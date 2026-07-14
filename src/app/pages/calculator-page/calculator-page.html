@@ -25,13 +25,12 @@
       name="second"
       id="second"
     />
-    <button class="btn" (click)="calculate()">Calculate</button>
-    <app-btn-shared className="btn--primary" label="Calculate"></app-btn-shared>
+    <app-btn-shared [label]="'Calculate'"></app-btn-shared>
   </div>
   <footer class="flex items-center gap-12 mb-8">
     @if (result !== null) {
       <div class="result">Result: {{ result }}</div>
     }
-    <button class="btn btn--danger" (click)="reset()">Reset</button>
+    <app-btn-shared [className]="'btn--danger'" [label]="'Reset'"></app-btn-shared>
   </footer>
 </div>
