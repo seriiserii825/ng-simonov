@@ -2,16 +2,11 @@
   <h2 class="title">Calculator</h2>
   <div class="flex items-center gap-4 mb-8">
     <app-input-shared [(ngModel)]="firstNumber" [name]="'first'" [type]="'number'" />
-    <select
-      class="border border-gray-300 rounded px-2 py-1 bg-slate-700 text-white"
-      name="operation"
-      id="operation"
+    <app-select-shared
       [(ngModel)]="operation"
-    >
-      @for (op of operations; track $index) {
-        <option [value]="op">{{ op }}</option>
-      }
-    </select>
+      [name]="'operation'"
+      [options]="operations"
+    ></app-select-shared>
     <app-input-shared [(ngModel)]="secondNumber" [name]="'second'" [type]="'number'" />
     <app-btn-shared [label]="'Calculate'" (clickEmit)="calculate()"></app-btn-shared>
   </div>

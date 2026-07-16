@@ -2,21 +2,28 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BtnShared } from '../../shared/btn-shared/btn-shared';
 import { InputShared } from '../../shared/input-shared/input-shared';
+import { SelectShared } from '../../shared/select-shared/select-shared';
+import { ISelectOption } from '../../shared/select-shared/interfaces/ISelectOption';
 
 @Component({
   selector: 'app-calculator-page',
-  imports: [FormsModule, BtnShared, InputShared],
+  imports: [FormsModule, BtnShared, InputShared, SelectShared],
   templateUrl: './calculator-page.html',
 })
 export class CalculatorPage {
   firstNumber: number = 1;
   secondNumber: number = 1;
-  operations: string[] = ['+', '-', '*', '/'];
-  operation: string = '+';
+  operations: ISelectOption[] = [
+    { value: '+', label: '+' },
+    { value: '-', label: '-' },
+    { value: '*', label: '*' },
+    { value: '/', label: '/' },
+  ];
+  operation: ISelectOption = this.operations[0];
   result: number = 1;
 
   calculate() {
-    switch (this.operation) {
+    switch (this.operation.value) {
       case '+':
         this.result = this.firstNumber + this.secondNumber;
         break;
@@ -42,7 +49,7 @@ export class CalculatorPage {
   reset() {
     this.firstNumber = 1;
     this.secondNumber = 1;
-    this.operation = '+';
+    this.operation = this.operations[0];
     this.result = 1;
   }
 }
