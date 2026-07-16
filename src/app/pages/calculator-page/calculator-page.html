@@ -5,8 +5,7 @@
     <app-select-shared
       [(ngModel)]="operation"
       [name]="'operation'"
-      [options]="operations"
-    ></app-select-shared>
+      [options]="operations"></app-select-shared>
     <app-input-shared [(ngModel)]="secondNumber" [name]="'second'" [type]="'number'" />
     <app-btn-shared [label]="'Calculate'" (clickEmit)="calculate()"></app-btn-shared>
   </div>
@@ -17,7 +16,6 @@
     <app-btn-shared
       [className]="'btn--danger'"
       [label]="'Reset'"
-      (clickEmit)="reset()"
-    ></app-btn-shared>
+      (clickEmit)="reset()"></app-btn-shared>
   </footer>
 </div>

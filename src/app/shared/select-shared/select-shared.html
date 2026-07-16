@@ -2,19 +2,17 @@
   <button
     class="bg-slate-600 text-2xl leading-none w-9 h-9 flex items-center justify-center text-white cursor-pointer px-2"
     [class.opacity-50]="disabled"
-    (click)="toggleOpen()"
-  >
-    <span class="inline-flex items-center justify-center leading-none">{{
-      value?.label ?? '—'
-    }}</span>
+    (click)="toggleOpen()">
+    <span class="inline-flex items-center justify-center leading-none">
+      {{ value?.label ?? '—' }}
+    </span>
   </button>
   @if (isOpen) {
     <div class="absolute top-8 left-0 bg-slate-600 w-full text-white z-10">
       @for (option of options(); track option.value) {
         <button
           class="border-0 block w-full cursor-pointer hover:bg-slate-700 p-2"
-          (click)="selectOption(option)"
-        >
+          (click)="selectOption(option)">
           {{ option.label }}
         </button>
       }
