@@ -1,0 +1,10 @@
+<input
+  class="border border-gray-300 rounded px-2 py-1"
+  [type]="type()"
+  [name]="name()"
+  [id]="name()"
+  [disabled]="disabled"
+  [value]="value"
+  (input)="handleInput($any($event.target).value)"
+  (blur)="onTouched()"
+/>

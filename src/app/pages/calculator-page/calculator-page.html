@@ -1,13 +1,7 @@
 <div class="m-w-[600px] m-auto">
   <h2 class="title">Calculator</h2>
   <div class="flex items-center gap-4 mb-8">
-    <input
-      [(ngModel)]="firstNumber"
-      class="border border-gray-300 rounded px-2 py-1"
-      type="number"
-      name="first"
-      id="first"
-    />
+    <app-input-shared [(ngModel)]="firstNumber" [name]="'first'" [type]="'number'" />
     <select
       class="border border-gray-300 rounded px-2 py-1 bg-slate-700 text-white"
       name="operation"
