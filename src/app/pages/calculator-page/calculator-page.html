@@ -12,13 +12,7 @@
         <option [value]="op">{{ op }}</option>
       }
     </select>
-    <input
-      [(ngModel)]="secondNumber"
-      class="border border-gray-300 rounded px-2 py-1"
-      type="number"
-      name="second"
-      id="second"
-    />
+    <app-input-shared [(ngModel)]="secondNumber" [name]="'second'" [type]="'number'" />
     <app-btn-shared [label]="'Calculate'" (clickEmit)="calculate()"></app-btn-shared>
   </div>
   <footer class="flex items-center gap-12 mb-8">
