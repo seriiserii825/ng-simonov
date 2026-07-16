@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { IBtnClass } from './interfaces/IBtnClass';
 
 @Component({
@@ -9,4 +9,9 @@ import { IBtnClass } from './interfaces/IBtnClass';
 export class BtnShared {
   label = input.required<string>();
   className = input<IBtnClass>();
+  clickEmit = output<void>();
+
+  onClick() {
+    this.clickEmit.emit();
+  }
 }

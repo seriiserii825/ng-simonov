@@ -25,12 +25,16 @@
       name="second"
       id="second"
     />
-    <app-btn-shared [label]="'Calculate'"></app-btn-shared>
+    <app-btn-shared [label]="'Calculate'" (clickEmit)="calculate()"></app-btn-shared>
   </div>
   <footer class="flex items-center gap-12 mb-8">
     @if (result !== null) {
       <div class="result">Result: {{ result }}</div>
     }
-    <app-btn-shared [className]="'btn--danger'" [label]="'Reset'"></app-btn-shared>
+    <app-btn-shared
+      [className]="'btn--danger'"
+      [label]="'Reset'"
+      (clickEmit)="reset()"
+    ></app-btn-shared>
   </footer>
 </div>
